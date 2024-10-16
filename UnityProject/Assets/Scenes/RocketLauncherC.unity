@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 125341260}
   - component: {fileID: 125341265}
   - component: {fileID: 125341264}
+  - component: {fileID: 125341266}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -462,6 +463,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fov: 45
   radius: 10
+--- !u!114 &125341266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125341250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9b4c2fe5624a1ec40ab02840d692d44c, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &448440936
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,13 +675,14 @@ GameObject:
   - component: {fileID: 558351227}
   - component: {fileID: 558351226}
   - component: {fileID: 558351225}
+  - component: {fileID: 558351228}
   m_Layer: 5
   m_Name: AchievementCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &558351224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -735,6 +767,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &558351228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558351223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0bf5b6e1ee4dcaa932291e0f45fa2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementSlotPrefab: {fileID: 0}
 --- !u!1 &968877787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,6 +1114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1746022959}
+  - component: {fileID: 1746022960}
   m_Layer: 0
   m_Name: AchievementManager
   m_TagString: Untagged
@@ -1091,6 +1137,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746022960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746022957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f72ce88fae4b9bab02f93ccec8ac62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements:
+  - {fileID: 11400000, guid: 1eb5c1d34b299a64fb0d924bf6b4f05d, type: 2}
+  - {fileID: 11400000, guid: 22bdaadb234a17c48a21da361278aa92, type: 2}
+  - {fileID: 11400000, guid: 742bf846647011d4d946c1547f48e1ba, type: 2}
+  achievementView: {fileID: 558351228}
 --- !u!1 &1815915930
 GameObject:
   m_ObjectHideFlags: 0

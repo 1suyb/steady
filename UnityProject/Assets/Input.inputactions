@@ -62,7 +62,7 @@
                     "name": "",
                     "id": "c051d8ce-c415-4e76-b661-9f0cc8337e17",
                     "path": "<Keyboard>/space",
-                    "interactions": "MultiTap",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Boost",

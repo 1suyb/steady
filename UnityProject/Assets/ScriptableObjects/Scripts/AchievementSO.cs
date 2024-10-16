@@ -7,4 +7,5 @@ public class AchievementSO : ScriptableObject
     public string displayName;
     public string displayDesc;
     public bool isUnlocked;
+
 }
