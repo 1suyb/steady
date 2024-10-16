@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,13 +16,13 @@ public class RocketMovementC : MonoBehaviour
     private void Awake()
     {
         _rb2d = GetComponent<Rigidbody2D>();
-    }
+	}
 
     private void FixedUpdate()
     {
         if (!(highScore < transform.position.y)) return;
         highScore = transform.position.y;
-        OnHighScoreChanged?.Invoke(highScore);
+		OnHighScoreChanged?.Invoke(highScore);
     }
 
     public void ApplyMovement(float inputX)
