@@ -44,7 +44,9 @@ public class AchievementManager : MonoBehaviour
         if(!(achievements[currentThresholdIndex].threshold > height))
         {
             achievements[currentThresholdIndex].isUnlocked = true;
-            if (currentThresholdIndex < achievements.Length-1)
+            achievementView.UnlockAchievement(achievements[currentThresholdIndex].threshold);
+
+			if (currentThresholdIndex < achievements.Length-1)
                 currentThresholdIndex++ ;
 		}
     }
