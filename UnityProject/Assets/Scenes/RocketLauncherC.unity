@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 98942971}
   - component: {fileID: 98942970}
   - component: {fileID: 98942969}
+  m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
