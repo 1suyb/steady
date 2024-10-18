@@ -34,9 +34,16 @@ public class RocketControllerC : MonoBehaviour
 	// OnBoost 구현
 	// private void OnBoost...
 
+	public void OnMove(InputValue value)
+	{
+        float dir = value.Get<float>();
+        _movementDirection = dir;
+	}
+
 	public void OnBoost()
 	{
 		_rocketMovement.ApplyBoost();
 		_energySystem.UseEnergy(ENERGY_BURST);
+        _isMoving = true;
 	}
 }

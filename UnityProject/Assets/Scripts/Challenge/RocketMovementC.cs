@@ -38,5 +38,8 @@ public class RocketMovementC : MonoBehaviour
     private void Rotate(float inputX)
     {
         // 움직임에 따라 회전을 바꿈 -> 회전을 바꾸고 그 방향으로 발사를 해야 그쪽으로 가겠죠?
+        float rotz = Mathf.Asin(inputX)*Mathf.Rad2Deg;
+        Debug.Log(rotz);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(new Vector3(0,0,-rotz)), ROTATIONSPEED);
     }
 }
