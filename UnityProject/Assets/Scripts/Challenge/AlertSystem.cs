@@ -32,7 +32,7 @@ public class AlertSystem : MonoBehaviour
         {
             Debug.Log(cols.gameObject.name);
 			Vector3 dirvec = (cols.transform.position - this.transform.position).normalized;
-			float dot = Mathf.Abs(Vector3.Dot(dirvec, this.transform.up));
+			float dot = Vector3.Dot(dirvec, this.transform.up);
 			if (dot > alertThreshold)
 			{
 				this.animator.SetBool(blinking, true);
