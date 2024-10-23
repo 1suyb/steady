@@ -10,6 +10,7 @@ public class AudioManager : Singleton<AudioManager>
 		{
 			_audioSource = this.gameObject.AddComponent<AudioSource>();
 		}
+		_audioSource.volume = 0f;
 	}
 	public void StartBGM()
 	{
