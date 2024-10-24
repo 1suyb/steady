@@ -1832,11 +1832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8a446684700e5478ea2f768424e53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sideDirVec: {x: 0, y: 0}
+  _sideDirVec: {x: 1, y: 0}
   _sideSpeed: 0
   _forwardSpeed: 0
-  _sideCycle: 1
-  _forwardCycle: 0.5
+  _sideCycle: 0
+  _forwardCycle: 1
 --- !u!50 &2081670856
 Rigidbody2D:
   serializedVersion: 4
