@@ -32,4 +32,9 @@ public class GameManager : MonoBehaviour
 	{
 		Time.timeScale = 1.0f;
 	}
+	public void QuitGame()
+	{
+		Debug.Log("quit game");
+		Application.Quit();
+	}
 }
