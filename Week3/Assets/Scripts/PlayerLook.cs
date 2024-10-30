@@ -14,7 +14,7 @@ public class PlayerLook : MonoBehaviour
 
 	private PlayerController _controller;
 	private Vector2 _mouseDelta;
-	private float _cameraCurrentXRot;
+	private float _cameraCurrentXRot = 0;
 
 	private void Awake()
 	{
@@ -41,7 +41,7 @@ public class PlayerLook : MonoBehaviour
 	private void CameraRotate()
 	{
 		_cameraCurrentXRot += _mouseDelta.y * _lookXSensitivity;
-		_cameraCurrentXRot = Mathf.Clamp(_cameraCurrentXRot, -minXLook, -maxXLook);
+		_cameraCurrentXRot = Mathf.Clamp(_cameraCurrentXRot, minXLook, maxXLook);
 		_camContainer.eulerAngles = new Vector3(-_cameraCurrentXRot, transform.eulerAngles.y, _camContainer.eulerAngles.z);
 	}
 }

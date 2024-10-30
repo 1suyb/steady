@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +10,11 @@ public class PlayerMove : MonoBehaviour
 	private Vector2 _dir;
 
 	[SerializeField] private float speed;
+	[SerializeField] private float runDuration;
+	[SerializeField] private float runColldown;
+	private float _currentSpeed;
+
+	private bool _isRunCooldown;
 
 	private void Awake()
 	{
@@ -22,10 +24,35 @@ public class PlayerMove : MonoBehaviour
 	private void Start()
 	{
 		_controller.Moving += SetMoveDir;
+		_controller.Running += Run;
+		_currentSpeed = speed;
 	}
 	private void Update()
 	{
 		Move();
+	}
+
+	public void Run()
+	{
+		if(!_isRunCooldown)
+		{
+			StartCoroutine(SpeedUp());
+		}
+		
+	}
+	private IEnumerator SpeedUp()
+	{
+		_currentSpeed= speed*5;
+		yield return new WaitForSeconds(runDuration);
+		_currentSpeed = speed;
+		StartCoroutine(RunCooldown());
+
+	}
+	private IEnumerator RunCooldown()
+	{
+		_isRunCooldown = true;
+		yield return new WaitForSeconds(runColldown);
+		_isRunCooldown = false;
 	}
 
 	public void SetMoveDir(Vector2 dir)
@@ -34,6 +61,7 @@ public class PlayerMove : MonoBehaviour
 	}
 	public void Move()
 	{
-		_rigidbody.velocity = transform.forward * _dir.y * speed + transform.right * _dir.x * speed + transform.up*_rigidbody.velocity.y;
+		_rigidbody.velocity = transform.forward * _dir.y * _currentSpeed + transform.right * _dir.x * _currentSpeed + transform.up * _rigidbody.velocity.y;
+
 	}
 }
