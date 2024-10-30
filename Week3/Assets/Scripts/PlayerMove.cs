@@ -43,14 +43,15 @@ public class PlayerMove : MonoBehaviour
 	private IEnumerator SpeedUp()
 	{
 		_currentSpeed= speed*5;
+		_isRunCooldown = true;
+		StartCoroutine(RunCooldown());
 		yield return new WaitForSeconds(runDuration);
 		_currentSpeed = speed;
-		StartCoroutine(RunCooldown());
+		
 
 	}
 	private IEnumerator RunCooldown()
 	{
-		_isRunCooldown = true;
 		yield return new WaitForSeconds(runColldown);
 		_isRunCooldown = false;
 	}
